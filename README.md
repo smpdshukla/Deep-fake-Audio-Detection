@@ -26,7 +26,7 @@ View prediction — whether the audio is Real or Deepfake.
 **1.CNN**: Captures spectral features from audio signals.
 **2.RNN & GRU**: Models sequential dependencies in audio.
 **3.BiLSTM**: Learns temporal context in both directions.
-**4.XGBoost:** Meta-classifier combining deep learning model outputs.
+**4.XGBoost**:Learns from extracted numerical features, leveraging gradient boosting for robust feature importance analysis.
 
 ## 📈 Future Improvements
 1.Support for multilingual audio.
