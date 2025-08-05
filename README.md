@@ -17,20 +17,29 @@ The pipeline includes:
 5. **Scalable and Extendable:** The architecture is modular, allowing easy integration with new models, datasets, or cloud deployment platforms.  
 
 ## ▶️ Usage
-Run the Flask/Streamlit app.
-python app.py or streamlit run app.py.
-Upload an audio file via the interface.
-View prediction — whether the audio is Real or Deepfake.
+1.Run the Flask/Streamlit app.
+
+2.python app.py or streamlit run app.py.
+
+3.Upload an audio file via the interface.
+
+4.View prediction — whether the audio is Real or Deepfake.
 
 ## 📊 Models Used
 **1.CNN**: Captures spectral features from audio signals.
+
 **2.RNN & GRU**: Models sequential dependencies in audio.
+
 **3.BiLSTM**: Learns temporal context in both directions.
+
 **4.XGBoost**:Learns from extracted numerical features, leveraging gradient boosting for robust feature importance analysis.
 
 ## 📈 Future Improvements
 1.Support for multilingual audio.
+
 2.Real-time streaming detection.
+
 3.Cloud deployment for scalability.
+
 4.Integration of Explainable AI (XAI) for transparency.
 
