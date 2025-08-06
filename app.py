@@ -58,7 +58,7 @@ st.markdown('<div class="sub-title">Using Stacking Model for Classification</div
 
 # Sidebar for file upload
 st.sidebar.markdown('<div class="sidebar-title">Upload Audio File</div>', unsafe_allow_html=True)
-uploaded_file = st.sidebar.file_uploader("Choose a WAV file", type=["wav"])
+uploaded_file = st.sidebar.file_uploader("Choose a WAV file", type=["wav",mp3])
 
 # Define the CNN model architecture
 def create_cnn_model(input_shape):
@@ -212,7 +212,7 @@ if uploaded_file is not None:
     progress_bar.progress(30)
     # Audio player
     st.markdown("### 🎧 Play Uploaded Audio")
-    st.audio(uploaded_file, format="audio/wav")
+    st.audio(uploaded_file, format=f"audio/{uploaded_file.type.split('/')[-1]}")
 
     # Display waveform
     st.markdown("### Waveform of Uploaded Audio")
@@ -307,4 +307,5 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
 
     st.pyplot(fig)
+
 
