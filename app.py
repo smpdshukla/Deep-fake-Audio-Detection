@@ -23,7 +23,7 @@ st.sidebar.info(
 )
 
 # Define the path to model directory
-MODEL_DIR = "E:/deepfake-audio-detection"
+MODEL_DIR = os.path.dirname(__file__)
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -302,4 +302,5 @@ if uploaded_file is not None:
     for i,v in enumerate(accuracy):
         ax.text(v+1,i,f"{v}%",va='center')
     st.subheader("Model Accuracy")
+
     st.pyplot(fig)
