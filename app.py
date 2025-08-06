@@ -210,6 +210,9 @@ if uploaded_file is not None:
     # Load audio
     audio_data, sr = librosa.load(file_path, sr=16000)
     progress_bar.progress(30)
+    # Audio player
+    st.markdown("### 🎧 Play Uploaded Audio")
+    st.audio(uploaded_file, format="audio/wav")
 
     # Display waveform
     st.markdown("### Waveform of Uploaded Audio")
@@ -304,3 +307,4 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
 
     st.pyplot(fig)
+
