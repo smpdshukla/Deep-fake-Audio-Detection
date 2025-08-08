@@ -1,4 +1,4 @@
-# Deep-fake-Audio-Detection
+## 🎙 Deep-fake-Audio-Detection
 Deep fake Audio Detection is  AI/ML based project that uses classification models to detect whether audio is real or a machine generated.
 The pipeline includes:
 1. **Audio Preprocessing:** Converts raw audio into machine-readable features. It extracts Mel-Frequency Cepstral Coefficients (MFCCs), which help the model capture nuances in human speech.
@@ -15,23 +15,34 @@ The pipeline includes:
 4.**User-Friendly Interface:** Non-technical users can easily upload audio files without requiring command-line interaction.  
 5. **Scalable and Extendable:** The architecture is modular, allowing easy integration with new models, datasets, or cloud deployment platforms.  
 
-## ▶️ Usage
-1.Run the Flask/Streamlit app using **python app.py** or **streamlit run app.py**.
-
-3.Upload an audio file via the interface.
-
-4.View prediction — whether the audio is Real or Deepfake.
+## 📦 Dataset
+1. **Source:** for-2seconds dataset taken from FoR dataset.(Publicly available speech datasets & synthetic deepfake audio.)
+  
+2. **Temporary Testing Dataset:**
+   
+3. **Follow Path:** **temp/for-2seconds/testing/**
+    
+4. Contains short 2-second audio clips for quick evaluation.
+  
+5. real/ → Human voice samples.
+  
+6. fake/ → AI-generated voice samples.
+ 
+7. **Supported Formats:** .wav (default), .mp3 and .flac (when enabled in uploader).
 
 ## 📊 Models Used
-**1.CNN**: Captures spectral features from audio signals.
 
-**2.RNN & GRU**: Models sequential dependencies in audio.
+| Model               | Type             | Role in Stack                |
+|---------------------|------------------|------------------------------|
+| CNN                 | Deep Learning    | Base model                   |
+| RNN                 | Deep Learning    | Base model                   |
+| BiLSTM              | Deep Learning    | Base model                   |
+| GRU                 | Deep Learning    | Base model                   |
+| XGBoost             | ML Algorithm     | Base model                   |
+| Logistic Regression | ML Algorithm     | Meta-classifier              |
 
-**3.BiLSTM**: Learns temporal context in both directions.
+✅ Meta-classifier combines all base models’ predictions for final classification.
 
-**4.XGBoost**:Learns from extracted numerical features, leveraging gradient boosting for robust feature importance analysis.
-
-**5.Logistic Regression**:Combines base model outputs to deliver the final Real vs Fake prediction with confidence.
 
 ## 🛠 Tech Stack & Tools
 - **Languages:** Python 3.9+  
@@ -40,8 +51,31 @@ The pipeline includes:
 - **Audio Processing:** Librosa, SoundFile  
 - **Data Handling:** NumPy, Pandas  
 - **Visualization:** Matplotlib, Seaborn  
-- **Deployment:** Flask, Streamlit  
+- **UI & Deployment:** Streamlit 
 - **Environment:** Jupyter Notebook, Anaconda
+
+## ▶️ Usage
+1. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Run the Streamlit app:
+    ```bash
+    streamlit run app.py
+    ```
+
+3.Upload an audio file via the interface.
+
+4.View prediction — whether the audio is Real or Deepfake.
+
+
+## 📉 Visual Outputs in App
+- 🎵 Waveform of uploaded audio
+- 🎼 MFCC feature plot
+- 📊 Stacked model performance chart
+- 🗂 Final result in a highlight box – "Real" or "Fake" with confidence %
+
 
 ## 📈 Future Improvements
 1.Support for multilingual audio.
