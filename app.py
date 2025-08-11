@@ -9,25 +9,12 @@ import os
 import matplotlib.pyplot as plt
 
 st.sidebar.title("📖 About the Project")
-st.sidebar.info(
-    """
-    **Deepfake Audio Detection**
-
-    This app helps identify whether an audio file is **Real** (human voice) 
-    or **Deepfake** (AI-generated voice).  
-    using a **stacked ensemble model** combining:
-    - CNN, RNN, BiLSTM, GRU  
-    - Logistic Regression (meta-classifier)
-
-    """
-)
 
 # Define the path to model directory
 MODEL_DIR = os.path.dirname(__file__)
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-# Custom CSS for styling
 # Custom CSS for styling
 st.markdown(
     """
@@ -51,8 +38,21 @@ st.markdown(
         text-align: center;
         margin-bottom: 30px;
     }
+    .sidebar-title{
+        font-size: 16px;
+        font-weight: bold;
+        color: #000000 !important;
+        margin-bottom: 8px;
+    }
     section[data-testid="stSidebar"]{
-        backfroun-color: #E1BEE7;
+        background-color: #ffd8a8 !important;
+    }
+    [data-testid="stSidebar"]{
+        color: #000000 !important;
+    }
+    section[data-testid="stSidebar"]label{
+        color: #c2185b !important;
+        font-weight: bold;
     }
     .result-box{
         background-color: #FCE4EC;
@@ -65,54 +65,83 @@ st.markdown(
         color: #C2185B;
         margin-top: 20px;
     }
-    </style>
+    </style>    
      """,
     unsafe_allow_html=True,
 )
-# Custom sidebar style
 st.markdown("""
+<style>
+.sidebar-info-box {
+    background-color: #ffe6f0; /* soft pink background */
+    border: 2px solid #ff66a3; /* pink border */
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+    color: #2a2a2a; /* dark text for readability */
+    font-size: 15px;
+    line-height: 1.5;
+}
+.sidebar-info-box h4 {
+    color: #cc0066; /* bold dark pink title */
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.sidebar-info-box ul {
+    padding-left: 20px;
+    margin: 0;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+st.sidebar.markdown("""
+    <div class="sidebar-info-box">
+    <h4>Deepfake Audio Detection</h4>
+    <p>
+    This app helps identify whether an audio file is <b>Real</b> (human voice) or <b>Deepfake</b> (AI-generated voice),
+    using a <b>stacked ensemble model</b> combining:
+    </p>
+    <ul>
+    <li>CNN, RNN, BiLSTM, GRU</li>
+    <li>Logistic Regression (meta-classifier)</li>
+    </ul>
+    </div>
+""", unsafe_allow_html=True)
+st.markdown(
+    """
     <style>
-    /* Sidebar Background */
-    [data-testid="stSidebar"] {
-        background-color: #ffe6ee;
+    /* Change "About the Project" and "Upload Audio File" headings to dark pink */
+    section[data-testid="stSidebar"] h1, 
+    section[data-testid="stSidebar"] h2, 
+    section[data-testid="stSidebar"] h3, 
+    section[data-testid="stSidebar"] .sidebar-title {
+        color: #C2185B !important;
     }
 
-    /* Sidebar Title and Headings */
-    [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
-        color: #d63384;
+    /* Change file uploader text to dark pink */
+    [data-testid="stFileUploader"] label,
+    [data-testid="stFileUploader"] div {
+        color: #C2185B !important;
+    }
+
+    /* Style Browse files button to dark pink */
+    [data-testid="stFileUploader"] button {
+        background-color: #C2185B !important;
+        color: white !important;
+        border-radius: 5px;
+        border: none;
         font-weight: bold;
     }
 
-    /* Info Box */
-    .sidebar-info-box {
-        background-color: #e6ccff;
-        border: 2px solid #ff99bb;
-        border-radius: 10px;
-        padding: 12px;
-    }
-    .sidebar-info-box h4 {
-        color: #4B0082;
-        font-weight: bold;
-    }
-
-    /* Info Box Text - Darker & Clear */
-    .sidebar-info-box p, .sidebar-info-box li {
-        color: #2c2c2c; /* Dark Gray */
-        font-weight: 500;
-        line-height: 1.5;
-    }
-
-    /* File Uploader Styling */
-    [data-testid="stFileUploader"] {
-        border: 2px dashed #ff99bb;
-        border-radius: 10px;
-        background-color: #ffffff;
+    /* Change hover effect for button */
+    [data-testid="stFileUploader"] button:hover {
+        background-color: #a01549 !important;
+        color: white !important;
     }
     </style>
-    """, 
+    """,
     unsafe_allow_html=True
-    )
-
+)
 
 # App title
 st.markdown('<div class="main-title">Deepfake Audio Detection</div>', unsafe_allow_html=True)
@@ -272,6 +301,7 @@ if uploaded_file is not None:
     # Load audio
     audio_data, sr = librosa.load(file_path, sr=16000)
     progress_bar.progress(30)
+
     # Audio player
     st.markdown("### 🎧 Play Uploaded Audio")
     st.audio(uploaded_file, format=f"audio/{uploaded_file.type.split('/')[-1]}")
@@ -367,12 +397,5 @@ if uploaded_file is not None:
     for i,v in enumerate(accuracy):
         ax.text(v+1,i,f"{v}%",va='center')
     st.subheader("Model Accuracy")
-
     st.pyplot(fig)
-
-
-
-
-
-
-
+    
