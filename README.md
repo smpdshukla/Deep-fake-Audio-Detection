@@ -59,8 +59,9 @@ The pipeline includes:
     ```bash
     pip install -r requirements.txt
     ```
-2. 2. Download the dataset consisting of **Fake** and **Real** audio files for testing:  
+2.  Download the dataset consisting of **Fake** and **Real** audio files for testing:  
    [📂 Fake-or-Real (FoR) Dataset on Kaggle](https://www.kaggle.com/datasets/mohammedabdeldayem/the-fake-or-real-dataset)
+   or from the **temp** folder from the github repo
 
 3. Run the Streamlit app:
     ```bash
