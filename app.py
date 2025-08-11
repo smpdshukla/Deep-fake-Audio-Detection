@@ -28,27 +28,45 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Custom CSS for styling
+# Custom CSS for styling
 st.markdown(
     """
     <style>
-    .main-title {
+    .stApp{
+        background-color: #FFF8E7;
+        color: #000000;
+    }
+    .main-title{
         font-size: 36px;
         font-weight: bold;
-        color: #4CAF50;
+        color: #C2185B;
         text-align: center;
+        border-bottom: 4px solid #FF9800;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
     }
-    .sub-title {
+    .sub-title{
         font-size: 20px;
-        color: #555555;
+        color: #E91E63;
         text-align: center;
+        margin-bottom: 30px;
     }
-    .sidebar-title {
+    section[data-testid="stSidebar"]{
+        backfroun-color: #E1BEE7;
+    }
+    .result-box{
+        background-color: #FCE4EC;
+        border: 2px solid #C2185B;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
         font-size: 18px;
         font-weight: bold;
-        color: #4CAF50;
+        color: #C2185B;
+        margin-top: 20px;
     }
     </style>
-    """,
+     """,
     unsafe_allow_html=True,
 )
 
@@ -217,7 +235,7 @@ if uploaded_file is not None:
     # Display waveform
     st.markdown("### Waveform of Uploaded Audio")
     fig_wave, ax_wave = plt.subplots(figsize=(10, 3))
-    librosa.display.waveshow(audio_data, sr=sr, ax=ax_wave)
+    librosa.display.waveshow(audio_data, sr=sr, ax=ax_wave, color="#FF9800")
     ax_wave.set_title("Waveform")
     ax_wave.set_xlabel("Time (s)")
     ax_wave.set_ylabel("Amplitude")
@@ -228,7 +246,7 @@ if uploaded_file is not None:
     st.markdown("### MFCCs of Uploaded Audio")
     mfcc = librosa.feature.mfcc(y=audio_data, sr=sr, n_mfcc=40)
     fig, ax = plt.subplots(figsize=(10, 4))
-    mfcc_display = librosa.display.specshow(mfcc, x_axis='time', sr=sr, ax=ax, cmap='viridis')
+    mfcc_display = librosa.display.specshow(mfcc, x_axis='time', sr=sr, ax=ax, cmap='magma')
     ax.set_title("MFCCs")
     ax.set_xlabel("Time (s)")
     ax.set_ylabel("MFCC Coefficients")
@@ -307,6 +325,7 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
 
     st.pyplot(fig)
+
 
 
 
