@@ -73,36 +73,35 @@ st.markdown(
 st.markdown(
     """
     <style>
-    /* Sidebar gradient background */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #FFD6E8, #FFEFF7); /* Light pink gradient */
-        color: #2E2E2E;
+    [data-testid="stSidebar"]{
+        background-color: #FFE6EE;
+        color: #333;
     }
-
-    /* Sidebar headings */
-    [data-testid="stSidebar"] h1, 
-    [data-testid="stSidebar"] h2, 
-    [data-testid="stSidebar"] h3 {
-        color: #8E44AD; /* Purple shade */
+    [data-testid="stSidebar"]h1,
+    [data-testid="stSidebar"]h2,
+    [data-testid="stSidebar"]h3,{
+        color: #D63384;
+        font-weight: bold;
     }
-
-    /* Info box inside sidebar */
-    [data-testid="stSidebar"] .stAlert {
-        background-color: #FFF0F5 !important;
-        border-radius: 12px;
-        border: 1px solid #F78FB3;
+    [data-testid="stSidebar"].stAlert{
+        background-color: #E6CCFF;
+        border-radius: 10px;
+        border: 2px solid #FF99BB;
+        padding: 10px;
+        color: #444;
     }
-
-    /* File uploader style */
-    [data-testid="stSidebar"] [data-testid="stFileUploader"] {
-        background-color: #FFF7FA;
-        border: 2px dashed #FF8AB4;
-        border-radius: 12px;
-        padding: 12px;
+    [data-testid="stSidebar"][data-testid="stFileUploader"]{
+        background-color: white;
+        border: 2px dashed #FF99BB;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    [data-testid="stSidebar"][data-testid="stFileUploader"] section {
+        color: #D63384;
     }
     </style>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 
@@ -361,6 +360,7 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
 
     st.pyplot(fig)
+
 
 
 
