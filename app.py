@@ -70,39 +70,48 @@ st.markdown(
     unsafe_allow_html=True,
 )
 # Custom sidebar style
-st.markdown(
-    """
+st.markdown("""
     <style>
-    [data-testid="stSidebar"]{
-        background-color: #FFE6EE;
-        color: #333;
+    /* Sidebar Background */
+    [data-testid="stSidebar"] {
+        background-color: #ffe6ee;
     }
-    [data-testid="stSidebar"]h1,
-    [data-testid="stSidebar"]h2,
-    [data-testid="stSidebar"]h3,{
-        color: #D63384;
+
+    /* Sidebar Title and Headings */
+    [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #d63384;
         font-weight: bold;
     }
-    [data-testid="stSidebar"].stAlert{
-        background-color: #E6CCFF;
+
+    /* Info Box */
+    .sidebar-info-box {
+        background-color: #e6ccff;
+        border: 2px solid #ff99bb;
         border-radius: 10px;
-        border: 2px solid #FF99BB;
-        padding: 10px;
-        color: #444;
+        padding: 12px;
     }
-    [data-testid="stSidebar"][data-testid="stFileUploader"]{
-        background-color: white;
-        border: 2px dashed #FF99BB;
+    .sidebar-info-box h4 {
+        color: #4B0082;
+        font-weight: bold;
+    }
+
+    /* Info Box Text - Darker & Clear */
+    .sidebar-info-box p, .sidebar-info-box li {
+        color: #2c2c2c; /* Dark Gray */
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    /* File Uploader Styling */
+    [data-testid="stFileUploader"] {
+        border: 2px dashed #ff99bb;
         border-radius: 10px;
-        padding: 10px;
-    }
-    [data-testid="stSidebar"][data-testid="stFileUploader"] section {
-        color: #D63384;
+        background-color: #ffffff;
     }
     </style>
-    """,
-    unsafe_allow_html=True,
-)
+    """, 
+    unsafe_allow_html=True
+    )
 
 
 # App title
@@ -360,6 +369,7 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
 
     st.pyplot(fig)
+
 
 
 
