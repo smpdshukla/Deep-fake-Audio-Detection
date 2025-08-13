@@ -7,7 +7,11 @@ import xgboost as xgb
 from sklearn.linear_model import LogisticRegression
 import os
 import matplotlib.pyplot as plt
-
+st.set_page_config(
+    page_title="Deepfake Audio Detection Dashboard",
+    page_icon="🎙️",
+    layout="wide",
+)
 st.sidebar.title("📖 About the Project")
 
 # Define the path to model directory
@@ -399,3 +403,4 @@ if uploaded_file is not None:
     st.subheader("Model Accuracy")
     st.pyplot(fig)
     
+
