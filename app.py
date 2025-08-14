@@ -17,7 +17,6 @@ import re
 # =========================
 st.set_page_config(
     page_title="Deepfake Audio Detection Dashboard",
-    page_icon="🎙️",
     layout="wide",
 )
 
@@ -56,7 +55,7 @@ st.markdown(
         background-color: #ffd8a8 !important; /* peachy sidebar */
     }
     [data-testid="stSidebar"]{
-        color: #000000 !important;
+        color: #c71585  !important;
     }
     section[data-testid="stSidebar"] label{
         color: #c2185b !important;
@@ -434,4 +433,5 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
