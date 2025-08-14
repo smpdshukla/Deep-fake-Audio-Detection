@@ -147,6 +147,12 @@ st.markdown("""
         } </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+    [data-testid="stTooltipIcon"] svg {
+        fill: #c71585 !important;
+    }</style> 
+""", unsafe_allow_html=True)
 ALLOWED_EXTS = {"wav"}  # keep formats that work without ffmpeg reliably
 
 uploaded_file = st.sidebar.file_uploader(
@@ -458,6 +464,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
