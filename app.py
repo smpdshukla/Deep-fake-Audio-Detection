@@ -119,7 +119,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 
-st.sidebar.markdown('<div class="sidebar-title"><style="color: #c71858">Upload Audio (Local or URL)</div>', unsafe_allow_html=True)
+st.sidebar.markdown('<div class="sidebar-title";style="color: #c71858";>Upload Audio (Local or URL)</div>', unsafe_allow_html=True)
 
 # --- Upload controls (Local + URL without ffmpeg) ---
 ALLOWED_EXTS = {"wav"}  # keep formats that work without ffmpeg reliably
@@ -433,6 +433,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
