@@ -463,7 +463,15 @@ if file_path:
         ax.text(v + 1, i, f"{v}%", va='center')
     st.pyplot(fig_acc)
 else:
+    st.markdown("""
+    <style>
+        [data-testid="stNotificationContent"]{
+            color: white !important;
+            font-weight: 500;
+            }
+    </style> """,unsafe_allow_html=True)
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
