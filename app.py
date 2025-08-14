@@ -469,10 +469,10 @@ else:
         color: white; 
         padding: 10px; 
         border-radius: 8px;">
-        Upload a local WAV/MP3/FLAC file or paste a direct URL and click <b>Fetch from URL</b> to begin.
+        Upload a local WAV file or paste a direct URL and click <b>Fetch from URL</b> to begin.
     </div>
     </style> """,unsafe_allow_html=True)
-    st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+    
 
 
 
