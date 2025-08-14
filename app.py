@@ -118,9 +118,19 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown("""
+    <style>
+    .sidebar-title {
+        color: #c71585 !important;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 st.sidebar.markdown(
-    '<div class="sidebar-title" style="color: #c71585 !important;">Upload Audio (Local or URL)</div>',
+    '<div class="sidebar-title">Upload Audio (Local or URL)</div>',
     unsafe_allow_html=True
 )
 
@@ -437,6 +447,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
