@@ -120,7 +120,7 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown(
-    '<div class="sidebar-title" style="color: #c71585;">Upload Audio (Local or URL)</div>',
+    '<div class="sidebar-title" style="color: #c71585 !important;">Upload Audio (Local or URL)</div>',
     unsafe_allow_html=True
 )
 
@@ -437,6 +437,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
