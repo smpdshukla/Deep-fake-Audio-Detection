@@ -110,7 +110,7 @@ st.sidebar.markdown(
         This app identifies whether an audio file is <b>Real</b> (human voice) or <b>Deepfake</b> (AI-generated voice)
         using a <b>stacked ensemble</b>:
       </p>
-      <ul style="padding-left:20px;margin:0;color=#c71585;">
+      <ul style="padding-left:20px;margin:0;color: #c71585;">
         <li>CNN, RNN, BiLSTM, GRU</li>
         <li>Logistic Regression (meta-classifier)</li>
       </ul>
@@ -433,6 +433,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
