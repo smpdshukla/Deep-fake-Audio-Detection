@@ -142,7 +142,7 @@ st.markdown("""
     [data-testid="stFileUploaderDropzone"]{
         pointer-events: none !important; 
     }
-    [data-testid="stFileUploaderDropzone"]{
+    [data-testid="stFileUploaderDropzone"] button {
         pointer-events: auto !important;
         } </style>
 """, unsafe_allow_html=True)
@@ -458,6 +458,7 @@ if file_path:
     st.pyplot(fig_acc)
 else:
     st.info("Upload a local WAV/MP3/FLAC file or paste a direct URL and click **Fetch from URL** to begin.")
+
 
 
 
