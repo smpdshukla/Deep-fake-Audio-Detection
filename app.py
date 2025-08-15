@@ -88,6 +88,18 @@ st.markdown(
      """,
     unsafe_allow_html=True,
 )
+st.markdown(""" 
+<style>
+    [data-testid="stNotificationContent"]{
+        color: #c2185b !important;
+        font-weight: bold;
+    }
+    .stSuccess[data-testid="stNotificationContent"]{
+            color: #2e7d32 !important;
+            font-weight: bold;
+    }
+</style>
+ """, unsafe_allow_html=True)
 
 # =========================
 # 📚 SIDEBAR (About + Upload)
@@ -168,18 +180,6 @@ fetch_btn = st.sidebar.button("Fetch from URL")
 # =========================
 # 📂 File handling helpers
 # =========================
-st.markdown(""" 
-<style>
-    [data-testid="stNotificationContent"]{
-        color: #c2185b !important;
-        font-weight: bold;
-    }
-    .stSuccess[data-testid="stNotificationContent"]{
-            color: #2e7d32 !important;
-            font-weight: bold;
-    }
-</style>
- """, unsafe_allow_html=True)
 
 MODEL_DIR = os.path.dirname(__file__)
 UPLOAD_DIR = "uploads"
@@ -486,6 +486,7 @@ else:
     </div>
     </style> """,unsafe_allow_html=True)
     
+
 
 
 
