@@ -88,18 +88,6 @@ st.markdown(
      """,
     unsafe_allow_html=True,
 )
-st.markdown(""" 
-<style>
-    [data-testid="stNotificationContent"]{
-        color: #c2185b !important;
-        font-weight: bold;
-    }
-    .stSuccess[data-testid="stNotificationContent"]{
-            color: #2e7d32 !important;
-            font-weight: bold;
-    }
-</style>
- """, unsafe_allow_html=True)
 
 # =========================
 # 📚 SIDEBAR (About + Upload)
@@ -176,6 +164,19 @@ uploaded_file = st.sidebar.file_uploader(
 st.sidebar.markdown("**Or** paste a direct URL (WAV)")
 audio_url = st.sidebar.text_input("Audio URL", placeholder="https://example.com/sample.wav")
 fetch_btn = st.sidebar.button("Fetch from URL")
+
+st.markdown(""" 
+<style>
+    [data-testid="stNotificationContent"]{
+        color: #c2185b !important;
+        font-weight: bold;
+    }
+    .stSuccess[data-testid="stNotificationContent"]{
+            color: #2e7d32 !important;
+            font-weight: bold;
+    }
+</style>
+ """, unsafe_allow_html=True)
 
 # =========================
 # 📂 File handling helpers
@@ -486,6 +487,7 @@ else:
     </div>
     </style> """,unsafe_allow_html=True)
     
+
 
 
 
