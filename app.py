@@ -89,27 +89,33 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.markdown("""
-    <style>
-    .stSuccess{
-        background-color: #ffe8ec !important;
-        border-radius: 8px !important;
-        padding: 0.8em !important;
-        }
-    .stSuccess[data-testid="stNotificationContent"]{
-        color: #c2185b !important;
-        font-weight: bold;        
-        }
-    .stError{
-        background-color: #ffe0e0 !important;
-        border-radius: 8px !important;
-        padding: 0.8em !important;
-        }
-    .stError[data-testid="stNotificationContent"]{
-        color: #b00020 !important;
-        font-weight: bold;
-        }
-    </style>""",unsafe_allow_html=True
-)
+<style>
+/* SUCCESS box override */
+div[data-baseweb="notification"][role="status"] {
+    background-color: #ffe8ec !important; /* soft peach-pink */
+    border-radius: 8px !important;
+    padding: 0.8em !important;
+    border: none !important;
+}
+div[data-baseweb="notification"][role="status"] p {
+    color: #c2185b !important; /* dark pink text */
+    font-weight: bold;
+}
+
+/* ERROR box override */
+div[data-baseweb="notification"][role="alert"] {
+    background-color: #ffe0e0 !important; /* soft red-pink */
+    border-radius: 8px !important;
+    padding: 0.8em !important;
+    border: none !important;
+}
+div[data-baseweb="notification"][role="alert"] p {
+    color: #b00020 !important; /* dark red text */
+    font-weight: bold;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 
 # =========================
@@ -498,6 +504,7 @@ else:
     </div>
     </style> """,unsafe_allow_html=True)
     
+
 
 
 
