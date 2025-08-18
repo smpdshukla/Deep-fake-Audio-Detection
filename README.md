@@ -28,7 +28,7 @@ The pipeline includes:
   
 6. fake/ → AI-generated voice samples.
  
-7. **Supported Formats:** .wav (default), .mp3 and .flac (when enabled in uploader).
+7. **Supported Formats:** .wav (default)
 
 ## 📊 Models Used
 
